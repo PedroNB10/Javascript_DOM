@@ -5,7 +5,7 @@ function Submit(){
     novo_item_lista.innerHTML = valor.value
     lista.appendChild(novo_item_lista)
     console.log(valor.value)    
-    alert(`Adicionei a tarefa ${valor.value}`)
+    
     
 }
 
