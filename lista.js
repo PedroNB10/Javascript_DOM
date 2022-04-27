@@ -35,13 +35,17 @@ function DeleteItem(){
 }
 
 function EditItem(){
+   
+    var valor_atual_item_lista = this.parentElement.innerText.replace("DeleteEdit","")
     const item_lista = this.parentElement// elemento pai é o o item da lista
     const campo_entrada_para_editar = document.createElement("input") //cria um elemento input
+    console.log(campo_entrada_para_editar)
     item_lista.innerHTML = ''//serve para não adicionar outros botoes e além disso REMOVE TODOS OS FILHOS DO PAI
     item_lista.appendChild(campo_entrada_para_editar) //anexa o input ao item da lista
     item_lista.appendChild(CriarBotaoDelete()) //anexa o botão delete
     item_lista.appendChild(CriarBotaoSave()) //anexa o botão save
-    campo_entrada_para_editar.select() //serve para  selecionar o campo de entrada sem precisar clicar em cima
+
+    campo_entrada_para_editar.value = valor_atual_item_lista//atribui o valor que tinha antes no do botao edit ser clicado
 }
 
 function SaveItem(){
@@ -63,7 +67,7 @@ function Submit(){ // Ao clicar no botão para enviar as tarefas, chama a funç�
     novo_item_lista.appendChild(CriarBotaoEdit())
     lista.appendChild (novo_item_lista) //anexa a criança novo_item_lista para a lista 'ul'
     document.getElementById("item").value = ""
-    valor.innerHTML = 'batata' 
+    valor.innerHTML = '' 
 }
 
 
